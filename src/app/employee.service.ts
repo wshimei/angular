@@ -8,7 +8,7 @@ import 'rxjs/add/observable/throw'
 @Injectable()
 export class EmployeeService {
 
-  private _url: string = "http://www.stewartwong.com/projects/api/Project.json"
+  private _url: string = "https://www.stewartwong.com/projects/api/Project.json"
 
   constructor(private http: HttpClient) { }
 
