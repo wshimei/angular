@@ -7,7 +7,7 @@ import { EmployeeService } from '../employee.service';
     <h2>Employee Details</h2>
     <h3>{{errorMsg}}</h3>
     <ul *ngFor="let employee of employees">
-      <li>{{employee.id}}. {{employee.name}} - {{employee.email}}</li>
+      <li>{{employee.id}}. {{employee.title}} - {{employee.description}}</li>
     </ul>
   `,
   styleUrls: ['./employee-detail.component.css']
