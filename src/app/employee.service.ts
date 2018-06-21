@@ -8,12 +8,12 @@ import 'rxjs/add/observable/throw'
 @Injectable()
 export class EmployeeService {
 
-  private _url: string = "https://www.stewartwong.com/projects/api/Project.json"
+  private _url: string = "https://www.stewartwong.com/projects/api/Project"
 
   constructor(private http: HttpClient) { }
 
   getEmployees(): Observable<IEmployee[]> {
-    return this.http.get<IEmployee[]>(this._url)
+    return this.http.get(this._url, {headers: {'Authorization': 'Basic ' + btoa("testuser:asdf1234")}})
                     .catch(this.errorHandler);
   }
 
