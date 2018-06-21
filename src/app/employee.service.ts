@@ -16,13 +16,8 @@ export class EmployeeService {
   constructor(private http: HttpClient) { }
 
   getEmployees(): Observable<IEmployee[]> {
-<<<<<<< HEAD
-    return this.http.get<IEmployee[]>(this._url).pipe(
-                    catchError(this.errorHandler));
-=======
-    return this.http.get(this._url, {headers: {'Authorization': 'Basic ' + btoa("testuser:asdf1234")}})
-                    .catch(this.errorHandler);
->>>>>>> 2c6c73d157b1ea9fb513ceb8ab396fa9cd035d36
+    return this.http.get<IEmployee[]>(this._url, {headers: {'Authorization': 'Basic ' + btoa("testuser:asdf1234")}})
+                    .pipe(catchError(this.errorHandler));
   }
 
   errorHandler(error: HttpErrorResponse){
